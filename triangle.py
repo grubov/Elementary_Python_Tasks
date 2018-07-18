@@ -8,9 +8,9 @@
 ## Если пользователь ответит “y” или “yes” (без учёта регистра),
 ## программа попросит ввести данные для ещё одного треугольника,
 ## в противном случае – выводит результат в консоль.
-##
+## 
 ## Расчёт площади треугольника должен производится по формуле Герона.
-## Каждый треугольник определяется именем и длинами его сторон.
+## Каждый треугольник определяется именем и длинами его сторон. 
 ## Формат ввода (разделитель - запятая):
 ## <имя>, <длина стороны>, <длина стороны>, <длина стороны>
 ## Приложение должно обрабатывать ввод чисел с плавающей точкой.
@@ -25,7 +25,6 @@
 
 import math
 
-
 def validation(n):
     try:
         number = float(n)
@@ -36,25 +35,21 @@ def validation(n):
     except ValueError:
         print('Incorrect value, enter a number > 0')
         return 0
-
-
+    
 def triangle_is_exist(a, b, c):
-    if (a + b) > c and (b + c) > a and (a + c) > b:
+    if (a+b)>c and (b+c)>a and (a+c)>b:
         return True
-
-
+    
 def triangle_is_valid(name, a, b, c):
     if a and b and c and name:
         if triangle_is_exist(a, b, c):
             return True
-
 
 def continue_enter(answer):
     if (answer.lower() == 'y') or (answer.lower() == 'yes'):
         return True
     else:
         return False
-
 
 class Triangle:
     """A triangle class"""
@@ -66,21 +61,21 @@ class Triangle:
         self.c = c
         self.s = self.area(a, b, c)
 
+
     def __lt__(self, other):
         return self.s < other.s
 
     def __str__(self):
-        ##        return '[Triangle '+self.name+']: '+ str(self.s) + ' cm'
-        return '[Triangle %s]: %.2f cm' % (self.name, self.s)
+##        return '[Triangle '+self.name+']: '+ str(self.s) + ' cm'
+          return '[Triangle %s]: %.2f cm' %(self.name, self.s)
 
     def area(self, a, b, c):
-        p = (a + b + c) / 2
-        s = math.sqrt(p * (p - a) * (p - b) * (p - c))
+        p=(a+b+c)/2
+        s=math.sqrt(p*(p-a)*(p-b)*(p-c))
         return s
 
-
 if __name__ == "__main__":
-    triangles = []
+    triangles=[]
     while True:
         name = input("name=")
         a = input("side a=")
@@ -90,9 +85,9 @@ if __name__ == "__main__":
         c = input("side c=")
         c = validation(c)
         if triangle_is_valid(name, a, b, c):
-            triangle = Triangle(name, a, b, c)
+            triangle=Triangle(name, a, b, c)
             triangles.append(triangle)
-        answer = input('Do you want to add another triangle? [yes] / [no]: ')
+        answer=input('Do you want to add another triangle? [yes] / [no]: ')
         if not continue_enter(answer):
             break
     triangles.sort(reverse=True)
