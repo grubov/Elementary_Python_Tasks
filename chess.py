@@ -42,8 +42,7 @@ if __name__ == "__main__":
     height = validation(height_raw)
     if board_is_valid(width, height):
         board = Board(width, height)
-        board.
-        print()
+        board.print()
     else:
         print('Can\'t print a board, incorrect values')
 

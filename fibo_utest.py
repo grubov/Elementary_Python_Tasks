@@ -3,18 +3,25 @@ import unittest
 import fibo
 
 
-class FiboTest(unittest.TestCase):
+class FiboTest_0(unittest.TestCase):
     def test_fibo_0(self):
-        self.assertEqual(chess.validation(0), 1)
+        self.assertEqual(fibo.fibo(10, 20), None)
 
-    def test_fibo_1(self):
-        self.assertEqual(chess.validation(1), 1)
 
-    def test_fibo_2(self):
-        self.assertEqual(chess.validation(2), 3)
+class FiboTest_1(unittest.TestCase):
+    def test_fibo_0(self):
+        self.assertEqual(fibo.fibo(1, 20), None)
 
-    def test_fibo_3(self):
-        self.assertEqual(chess.validation(3), 6)
+
+class FiboTest_2(unittest.TestCase):
+    def test_fibo_0(self):
+        self.assertEqual(fibo.fibo(20, 10), None)
+
+
+class FiboTest_3(unittest.TestCase):
+    def test_fibo_0(self):
+        self.assertEqual(fibo.fibo(100, 200), None)
+
 
 if __name__ == '__main__':
     unittest.main()

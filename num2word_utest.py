@@ -1,44 +1,22 @@
 import unittest
 
-import chess
+import num2word
 
 
-class ChessTest(unittest.TestCase):
-    def test_validation_0(self):
-        self.assertEqual(chess.validation(79), 79)
+class Num2wordTest(unittest.TestCase):
+    def test_n2w_0(self):
+        self.assertEqual(num2word.n2w(1), "один")
 
-    def test_validation_1(self):
-        self.assertEqual(chess.validation(5), 5)
+    def test_n2w_1(self):
+        self.assertEqual(num2word.n2w(10), "десять")
 
-    def test_validation_2(self):
-        self.assertEqual(chess.validation(1), 1)
+    def test_n2w_2(self):
+        self.assertEqual(num2word.n2w(101), "сто один")
 
-    def test_validation_3(self):
-        self.assertEqual(chess.validation(0), 0)
+    def test_n2w_3(self):
+        self.assertEqual(num2word.n2w(1002), "одна тысяча два")
 
-    def test_validation_4(self):
-        self.assertEqual(chess.validation('*'), 0)
 
-    def test_validation_5(self):
-        self.assertEqual(chess.validation('n'), 0)
-
-    def test_validation_6(self):
-        self.assertEqual(chess.validation(''), 0)
-
-    def test_board_is_valid_0(self):
-        self.assertTrue(chess.board_is_valid(1, 1))
-
-    def test_board_is_valid_1(self):
-        self.assertTrue(chess.board_is_valid(1, 2))
-
-    def test_board_is_valid_2(self):
-        self.assertTrue(chess.board_is_valid(79, 79))
-
-    def test_board_is_valid_3(self):
-        self.assertFalse(chess.board_is_valid(0, 0))
-
-    def test_board_is_valid_4(self):
-        self.assertFalse(chess.board_is_valid(0, 1))
 
 
 if __name__ == '__main__':

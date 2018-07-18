@@ -18,6 +18,7 @@ def validation(n):
         print('Incorrect value, enter a number')
         return 0
 
+
 class Sequence:
     """A sequence class"""
 
@@ -28,18 +29,14 @@ class Sequence:
     def seq(self):
         for n in range(self.limit):
             if (n * n) < self.limit:
-                seq_list.append(n)
-        for x in seq_list:
-            print(x)
-
-    def print(self):
+                self.seq_list.append(n)
         for x in self.seq_list:
-            print(x)
-            print("1")
+            print( x, end=", ")
+
 
 
 if __name__ == "__main__":
     limit = input("limit=")
     limit = validation(limit)
-    sequence=Sequence(limit)
+    sequence = Sequence(limit)
     sequence.seq()

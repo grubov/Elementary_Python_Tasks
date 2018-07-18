@@ -1,8 +1,13 @@
-def fibo(max):
+def fibo_generator(max):
     a = b = 1
     for i in range(max):
         yield a
         a, b = b, a + b
+
+def fibo(min, max):
+    for i in fibo_generator(max):
+        if max >= i >= min:
+            print(i)
 
 if __name__ == "__main__":
     try:
@@ -11,6 +16,6 @@ if __name__ == "__main__":
     except ValueError:
         print('Incorrect value, enter a number')
 
-    for i in fibo(max):
-        if max >= i >= min:
-            print(i)
+    fibo(min, max)
+
+
